@@ -1,0 +1,22 @@
+html {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(209,207,208,1), rgba(158,158,158,1));
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 3px;
+    border-radius: 2rem;
+    background-color: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00C2E8;
+    border-radius: 2rem;
+}
