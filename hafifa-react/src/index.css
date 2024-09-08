@@ -1,0 +1,15 @@
+.mui-data-grid-header {
+    background-color: #e4e4e7;
+    font-size: 2em;
+    border-bottom: 2px solid !important;
+    min-width: 252px !important;
+}
+
+.mui-data-grid-cell {
+    font-size: 1.6em;
+    text-align: center !important;
+}
+
+& .MuiOutlinedInput-root {
+    borderRadius: 30px !important;
+}

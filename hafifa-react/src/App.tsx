@@ -1,21 +1,24 @@
-import './App.css'
-import {Routes, Route, Navigate} from "react-router-dom";
-import NotFound from '@/pages/not-found/NotFound.tsx';
-import Schedule from '@/pages/schedule/Schedule.tsx';
-import TargetsBank from '@/pages/targets-bank/TargetsBank.tsx';
-import Layout from '@/components/layout/components/Layout';
+import './App.css';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Layout from '@components/layout/Layout.tsx';
+import NotFound from '@pages/not-found/NotFound.tsx';
+import { routes } from '@config';
 
 function App() {
-    return (
-        <Routes>
-            <Route path="/" element={<Layout/>}>
-                <Route index element={<Navigate to="targets-bank" />} />
-                <Route path="targets-bank" element={<TargetsBank />} />
-                <Route path="schedules" element={<Schedule />} />
-            </Route>
-            <Route path="*" element={<NotFound/>}/>
-        </Routes>
-    )
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="targets-bank" />} />
+          {routes.map((route) => (<Route key={route.path} path={route.path} element={route.component()} />))}
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <ToastContainer />
+    </>
+  );
 }
 
 export default App;
